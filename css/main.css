@@ -157,7 +157,7 @@ I chose the "centering in the viewport" approach.
    padding-top: 2em;
    left: 50%;
    margin-right: -50%;
-   transform: translate(-50%, 0%)
+   transform: translate(-50%,0%)
    }
 
    #copy-holder {
@@ -196,7 +196,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     position: relative;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%,0%)
     }
 @media screen and (min-width: 480px){
   .firstcharacter {
@@ -220,7 +220,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     padding-top: 2em;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%,0%)
     }
 
   IMG.logo {
@@ -229,7 +229,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     position: relative;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%,0%)
     }
     #buckhouse {
       font-family: 'Montserrat', 'sans-serif';
@@ -260,7 +260,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     position: relative;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%,0%)
     }
     #buckhouse {
       font-family: 'Montserrat', 'sans-serif';
@@ -275,7 +275,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       padding-top: 2em;
       left: 50%;
       margin-right: -50%;
-      transform: translate(-50%, 0%)
+      transform: translate(-50%,0%)
       }
 }
 
@@ -315,7 +315,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       padding-top: 2em;
       left: 50%;
       margin-right: -50%;
-      transform: translate(-50%, 0%)
+      transform: translate(-50%,0%)
     }
 }
 
@@ -341,7 +341,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     position: relative;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, 0%)
+    transform: translate(-50%,0%)
     }
     #buckhouse {
       font-family: 'Montserrat', 'sans-serif';
@@ -356,7 +356,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       padding-top: 2em;
       left: 50%;
       margin-right: -50%;
-      transform: translate(-50%, 0%)
+      transform: translate(-50%,0%)
     }
     #copy-holder {
       width: 100%;
