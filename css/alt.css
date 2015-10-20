@@ -202,21 +202,6 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     transform: translate(-50%,0%);
     -webkit-transform: translate(-50%,0%);
     }
-    #products {
-      font-family: 'Montserrat', 'sans-serif';
-      font-size: .8em;
-      color: #555;
-      letter-spacing: .3px;
-      text-align: center;
-    }
-    #product-header {
-      font-family: 'Montserrat', 'sans-serif';
-      font-size: .8em;
-      color: #333;
-      letter-spacing: .3px;
-      padding-top: 2vmin;
-      text-align: center;
-    }
 @media screen and (min-width: 480px){
   .firstcharacter {
   float: left;
