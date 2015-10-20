@@ -403,4 +403,12 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       font-size: 1em;
       line-height: 1.6em;
     }
+    #embedded-tweet {
+    width: 100%;
+    position: relative;
+    left: 10%;
+    margin-right: -10%;
+    transform: translate(-80%,0%);
+    -webkit-transform: translate(-80%,0%);
+  }
 }
