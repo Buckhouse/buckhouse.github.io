@@ -357,8 +357,8 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
   font-family: Georgia;
   }
   #article-intro{
-    width: 30%;
-    padding-left: 35%;
+    width: 50%;
+    padding-left: 25%;
   }
   IMG.logo {
     width: 2vmin;
