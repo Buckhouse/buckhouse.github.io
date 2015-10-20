@@ -202,6 +202,16 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     transform: translate(-50%,0%);
     -webkit-transform: translate(-50%,0%);
     }
+
+    #embedded-tweet {
+    width: 50vmin;
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%,0%);
+    -webkit-transform: translate(-50%,0%);
+  }
+
 @media screen and (min-width: 480px){
   .firstcharacter {
   float: left;
