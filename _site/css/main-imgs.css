@@ -59,6 +59,7 @@ gallery {
   padding: 0vw;
   font-size: 0;
   display: -ms-flexbox;
+  display:-webkit-flex;
   -ms-flex-wrap: wrap;
   -ms-flex-direction: column;
   -webkit-flex-flow: row wrap;
