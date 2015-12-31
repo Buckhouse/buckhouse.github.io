@@ -73,6 +73,9 @@ gallery div {
   width: 400px;
   margin: 0vw;
 }
+
+gallery a{display:block}
+
 gallery div img {
   width: 100%;
   height: auto;
@@ -82,5 +85,3 @@ gallery div img {
   gallery { padding: 0; }
 
 }
-
-a{display:block}
