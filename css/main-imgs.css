@@ -70,8 +70,7 @@ gallery {
 gallery div {
   -webkit-box-flex: auto;
   -ms-flex: auto;
-  flex: auto;
-  width: 400px;
+  flex: 1 0 400px;
   margin: 0vw;
 }
 
