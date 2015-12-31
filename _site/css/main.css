@@ -239,7 +239,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       text-align: center;
     }
     #embedded-tweet {
-    width: 140%;
+    width: 100%;
     position: relative;
     left: 50%;
     margin-right: -50%;
