@@ -97,15 +97,6 @@ Notice the line-height is re-adjusted for the collaborations index.
 
 */
 
-#bookshelf {
-  width: 100%;
-  position: relative;
-  padding-top: 2em;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%,0%);
-  -webkit-transform: translate(-50%,0%);
-}
 
 #collab {
   width: = 100%;
@@ -156,6 +147,7 @@ h1 {
   font-size: .3em;
   color: #999999;
   letter-spacing: .1em;
+  }
 }
 
 /* *********************** Article Pages ************************
@@ -273,6 +265,11 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     transform: translate(-50%,0%);
     -webkit-transform: translate(-50%,0%);
     }
+    IMG.article2up {
+      width: 50%;
+      position: relative;
+      float: left;
+      }
 
   IMG.logo {
     width: 4vmin;
