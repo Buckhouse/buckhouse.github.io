@@ -245,6 +245,69 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     -webkit-transform: translate(-50%,0%);
   }
 
+  @media screen and (min-width: 300px){
+    .firstcharacter {
+    float: left;
+    color: #888;
+    font-size: 11.6vmin;
+    line-height: 8.6vmin;
+    padding-right: 2vmin;
+    padding-left: 0px;
+    padding-top: 1.5vmin;
+    font-family: Georgia;
+    }
+    .title-line {
+      text-align: center;
+      color: #888;
+      font-size: 8vmin;
+      letter-spacing: .2em;
+      font-family: 'Montserrat', 'sans-serif';
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Montserrat', 'sans-serif';
+      font-size: 6vmin;
+      color: #999999;
+      letter-spacing: .2em;
+      line-height: 1.2em;
+    }
+    #article-intro{
+      width: 80%;
+      padding-left: 10%;
+    }
+
+    IMG.article {
+      width: 120%;
+      position: relative;
+      padding-top: 2em;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%,0%);
+      -webkit-transform: translate(-50%,0%);
+      }
+      IMG.article2up {
+        width: 50%;
+        position: relative;
+        float: left;
+        }
+
+    IMG.logo {
+      width: 4vmin;
+      padding-top: 2em;
+      position: relative;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%,0%);
+      -webkit-transform: translate(-50%,0%);
+      }
+      #buckhouse {
+        font-family: 'Montserrat', 'sans-serif';
+        font-size: 1em;
+        color: #999999;
+        letter-spacing: .6px;
+        padding-right: 18vmin;
+      }
+  }
 
 @media screen and (min-width: 480px){
   .firstcharacter {
