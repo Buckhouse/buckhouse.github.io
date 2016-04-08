@@ -271,7 +271,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     font-size: 6vmin;
     color: #999999;
     letter-spacing: .2em;
-    line-height: 2em;
+    line-height: 1.2em;
   }
   #article-intro{
     width: 80%;
@@ -334,7 +334,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     font-size: 8vmin;
     color: #999999;
     letter-spacing: .2em;
-    line-height: 2em;
+    line-height: 1.2em;
   }
   #article-intro{
     width: 70%;
