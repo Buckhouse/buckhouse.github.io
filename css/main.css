@@ -250,6 +250,14 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
   padding-top: 1.5vmin;
   font-family: Georgia;
   }
+  h1 {
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif';
+    ffont-size: 6vmin;
+    color: #999999;
+    letter-spacing: .2em;
+    line-height: 2em;
+  }
   #article-intro{
     width: 80%;
     padding-left: 10%;
@@ -298,6 +306,14 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
   padding-top: .6vmin;
   font-family: Georgia;
   }
+  h1 {
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif';
+    ffont-size: 8vmin;
+    color: #999999;
+    letter-spacing: .2em;
+    line-height: 2em;
+  }
   #article-intro{
     width: 70%;
     padding-left: 15%;
@@ -339,6 +355,14 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
   padding-left: 0px;
   padding-top: .2vmin;
   font-family: Georgia;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif';
+    ffont-size: 9vmin;
+    color: #999999;
+    letter-spacing: .2em;
+    line-height: 2em;
   }
   #article-intro{
     width: 50%;
@@ -382,6 +406,14 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
   padding-left: 0px;
   padding-top: .2vmin;
   font-family: Georgia;
+  }
+  h1 {
+    text-align: center;
+    font-family: 'Montserrat', 'sans-serif';
+    ffont-size: 10vmin;
+    color: #999999;
+    letter-spacing: .2em;
+    line-height: 2em;
   }
   #article-intro{
     width: 50%;
