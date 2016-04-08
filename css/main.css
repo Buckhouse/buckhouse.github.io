@@ -204,6 +204,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     text-align: center;
     color: #888;
     font-size: 15vmin;
+    line-height: 18vmin;
     letter-spacing: .2em;
     font-family: 'Montserrat', 'sans-serif';
   }
