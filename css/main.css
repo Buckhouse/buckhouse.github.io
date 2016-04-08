@@ -204,10 +204,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     text-align: center;
     color: #888;
     font-size: 15vmin;
-    line-height: 10vmin;
-    padding-top: 2vmin;
-    padding-right: 3vmin;
-    padding-left: 0px;
+    letter-spacing: .2em;
     font-family: 'Montserrat', 'sans-serif';
   }
 
@@ -264,16 +261,13 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     text-align: center;
     color: #888;
     font-size: 11.6vmin;
-    line-height: 8.6vmin;
-    padding-right: 2vmin;
-    padding-left: 0px;
-    padding-top: 1.5vmin;
+    letter-spacing: .2em;
     font-family: 'Montserrat', 'sans-serif';
   }
   h1 {
     text-align: center;
     font-family: 'Montserrat', 'sans-serif';
-    ffont-size: 6vmin;
+    font-size: 6vmin;
     color: #999999;
     letter-spacing: .2em;
     line-height: 2em;
@@ -330,16 +324,13 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     text-align: center;
     color: #888;
     font-size: 11.2vmin;
-    line-height: 9.5vmin;
-    padding-right: 1.8vmin;
-    padding-left: 0px;
-    padding-top: .6vmin;
+    letter-spacing: .2em;
     font-family: 'Montserrat', 'sans-serif';
   }
   h1 {
     text-align: center;
     font-family: 'Montserrat', 'sans-serif';
-    ffont-size: 8vmin;
+    font-size: 8vmin;
     color: #999999;
     letter-spacing: .2em;
     line-height: 2em;
@@ -390,16 +381,13 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     text-align: center;
     color: #888;
     font-size: 11.2vmin;
-    line-height: 9.5vmin;
-    padding-right: 1.8vmin;
-    padding-left: 0px;
-    padding-top: .2vmin;
+    letter-spacing: .2em;
     font-family: 'Montserrat', 'sans-serif';
   }
   h1 {
     text-align: center;
     font-family: 'Montserrat', 'sans-serif';
-    ffont-size: 9vmin;
+    font-size: 9vmin;
     color: #999999;
     letter-spacing: .2em;
     line-height: 2em;
@@ -451,16 +439,13 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     text-align: center;
     color: #888;
     font-size: 11.2vmin;
-    line-height: 9.5vmin;
-    padding-right: 1.8vmin;
-    padding-left: 0px;
-    padding-top: .2vmin;
+    letter-spacing: .2em;
     font-family: 'Montserrat', 'sans-serif';
   }
   h1 {
     text-align: center;
     font-family: 'Montserrat', 'sans-serif';
-    ffont-size: 10vmin;
+    font-size: 10vmin;
     color: #999999;
     letter-spacing: .2em;
     line-height: 2em;
