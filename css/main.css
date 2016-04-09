@@ -550,6 +550,15 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       font-size: 1em;
       line-height: 1.6em;
     }
+    #bio-holder {
+      width: 100%;
+      padding-top: 2.5em;
+      padding-left: 0%;
+      font-family: Georgia, serif;
+      font-size: 1em;
+      line-height: 1.6em;
+      align-content: center;
+    }
     #embedded-tweet {
     width: 100%;
     position: relative;
