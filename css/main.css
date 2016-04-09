@@ -557,7 +557,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       font-family: Georgia, serif;
       font-size: 1em;
       line-height: 1.6em;
-      align-content: center;
+      text-align: center;
     }
     #embedded-tweet {
     width: 100%;
