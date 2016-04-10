@@ -181,6 +181,15 @@ I chose the "centering in the viewport" approach.
      font-size: 1em;
      line-height: 1.6em;
    }
+   #bio-holder {
+     width: 100%;
+     padding-top: 2.5em;
+     padding-left: 0%;
+     font-family: Georgia, serif;
+     font-size: 1em;
+     line-height: 1.6em;
+     text-align: center;
+   }
 
 /* Drop Caps!
 Wrap it in a span, style it up! Read more here;
