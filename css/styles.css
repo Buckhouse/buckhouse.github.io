@@ -83,12 +83,12 @@ img {
 }
 
 ::-moz-selection {
-    background-color: #00D6BF;
+    background-color: #4c82d3;
     color: white
 }
 
 ::selection {
-    background-color: #00D6BF;
+    background-color: #4c82d3;
     color: white
 }
 
@@ -226,7 +226,7 @@ small, .font_small {
 }
 
 .bg-aqua {
-    background-color: #00D6BF
+    background-color: #4c82d3
 }
 
 .bg-aqua-dark {
@@ -720,7 +720,7 @@ small, .font_small {
 }
 
 .c-aqua {
-    color: #00D6BF
+    color: #4c82d3
 }
 
 .c-aqua-dark {
@@ -1740,7 +1740,7 @@ small, .font_small {
 
 .input:focus, .select:focus, .textarea:focus {
     outline: 0;
-    border-color: #00D6BF;
+    border-color: #4c82d3;
     transition: border-color 0.5s ease
 }
 
@@ -1760,7 +1760,7 @@ small, .font_small {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-bottom: 5px solid transparent;
-    border-top: 5px solid #00D6BF
+    border-top: 5px solid #4c82d3
 }
 
 select option:disabled {
@@ -4644,7 +4644,7 @@ select option:disabled {
 
 .btn--dark--outline {
     background-color: white;
-    color: #00D6BF
+    color: #4c82d3
 }
 
 .btn--play {
@@ -4667,7 +4667,7 @@ select option:disabled {
 }
 
 .card {
-    border-top: 4px solid #00D6BF;
+    border-top: 4px solid #4c82d3;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -4855,7 +4855,7 @@ select option:disabled {
 }
 
 .illustration svg .st5 {
-    fill: #00D6BF
+    fill: #4c82d3
 }
 
 .illustration__text {
@@ -4892,7 +4892,7 @@ select option:disabled {
 }
 
 .architecture svg .st3 {
-    fill: #00D6BF
+    fill: #4c82d3
 }
 
 .architecture svg .st4 {
@@ -4965,7 +4965,7 @@ select option:disabled {
 }
 
 .longform blockquote {
-    border-left: 3px solid #00D6BF;
+    border-left: 3px solid #4c82d3;
     padding-left: 2rem;
     margin-bottom: 2rem
 }
