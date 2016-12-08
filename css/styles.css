@@ -1,31 +1,31 @@
 @font-face {
     font-family: 'Nitti';
-    src: url("https://chain.com/fonts//nitti/normal/nitti-normal-v500-webfont.eot");
-    src: url("https://chain.com/fonts//nitti/normal/nitti-normal-v500-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts//nitti/normal/nitti-normal-v500-webfont.woff2") format("woff2"), url("https://chain.com/fonts//nitti/normal/nitti-normal-v500-webfont.woff") format("woff");
+    src: url("https://chain.com/fonts/nitti/normal/nitti-normal-v500-webfont.eot");
+    src: url("https://chain.com/fonts/nitti/normal/nitti-normal-v500-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts/nitti/normal/nitti-normal-v500-webfont.woff2") format("woff2"), url("https://chain.com/fonts/nitti/normal/nitti-normal-v500-webfont.woff") format("woff");
     font-weight: 500;
     font-style: normal
 }
 
 @font-face {
     font-family: 'Nitti';
-    src: url("https://chain.com/fonts//nitti/medium/nitti-medium-v500-webfont.eot");
-    src: url("https://chain.com/fonts//nitti/medium/nitti-medium-v500-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts//nitti/medium/nitti-medium-v500-webfont.woff2") format("woff2"), url("https://chain.com/fonts//nitti/medium/nitti-medium-v500-webfont.woff") format("woff");
+    src: url("https://chain.com/fonts/nitti/medium/nitti-medium-v500-webfont.eot");
+    src: url("https://chain.com/fonts/nitti/medium/nitti-medium-v500-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts/nitti/medium/nitti-medium-v500-webfont.woff2") format("woff2"), url("https://chain.com/fonts/nitti/medium/nitti-medium-v500-webfont.woff") format("woff");
     font-weight: 600;
     font-style: normal
 }
 
 @font-face {
     font-family: 'Nitti Grotesk';
-    src: url("https://chain.com/fonts//nittigrotesk/normal/nittigrotesk-normal-v20-webfont.eot");
-    src: url("https://chain.com/fonts//nittigrotesk/normal/nittigrotesk-normal-v20-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts//nittigrotesk/normal/nittigrotesk-normal-v20-webfont.woff2") format("woff2"), url("https://chain.com/fonts//nittigrotesk/normal/nittigrotesk-normal-v20-webfont.woff") format("woff");
+    src: url("https://chain.com/fonts/nittigrotesk/normal/nittigrotesk-normal-v20-webfont.eot");
+    src: url("https://chain.com/fonts/nittigrotesk/normal/nittigrotesk-normal-v20-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts/nittigrotesk/normal/nittigrotesk-normal-v20-webfont.woff2") format("woff2"), url("https://chain.com/fonts/nittigrotesk/normal/nittigrotesk-normal-v20-webfont.woff") format("woff");
     font-weight: 500;
     font-style: normal
 }
 
 @font-face {
     font-family: 'Nitti Grotesk';
-    src: url("https://chain.com/fonts//nittigrotesk/medium/nittigrotesk-medium-v20-webfont.eot");
-    src: url("https://chain.com/fonts//nittigrotesk/medium/nittigrotesk-medium-v20-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts//nittigrotesk/medium/nittigrotesk-medium-v20-webfont.woff2") format("woff2"), url("https://chain.com/fonts//nittigrotesk/medium/nittigrotesk-medium-v20-webfont.woff") format("woff");
+    src: url("https://chain.com/fonts/nittigrotesk/medium/nittigrotesk-medium-v20-webfont.eot");
+    src: url("https://chain.com/fonts/nittigrotesk/medium/nittigrotesk-medium-v20-webfont.eot?#iefix") format("embedded-opentype"), url("https://chain.com/fonts/nittigrotesk/medium/nittigrotesk-medium-v20-webfont.woff2") format("woff2"), url("https://chain.com/fonts/nittigrotesk/medium/nittigrotesk-medium-v20-webfont.woff") format("woff");
     font-weight: 600;
     font-style: normal
 }
