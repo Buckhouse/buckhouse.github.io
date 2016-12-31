@@ -577,3 +577,52 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     -webkit-transform: translate(-80%,0%);
   }
 }
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900);
+
+$transition : .3s;
+$size : 500px;
+
+$a : cyan;
+$b : red;
+
+blendbody {
+	mix-blend-mode: multiply;
+}
+
+.a-filter { color: $a; }
+.b-filter { color: $b; }
+
+.glasses {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+}
+
+.lens {
+	position: absolute;
+	top: 0;
+	width: $size;
+	height: $size;
+	cursor: move;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+	cursor: grab;
+	background: currentColor;
+	mix-blend-mode: multiply;
+	transition: box-shadow $transition;
+
+	&.a-filter {
+		top: $size;
+		left: $size;
+	}
+
+	&:active {
+		transition-duration: $transition/2;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+		cursor: grabbing;
+	}
+}
