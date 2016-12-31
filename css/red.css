@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900);
 
 $transition : .3s;
-$size : 500px;
+$size : 150px;
 
 $a : cyan;
 $b : red;
@@ -43,6 +43,7 @@ p {
 	top: 0;
 	width: $size;
 	height: $size;
+	border-radius: $size;
 	cursor: move;
   cursor: -webkit-grab;
   cursor: -moz-grab;
@@ -50,6 +51,10 @@ p {
 	background: currentColor;
 	mix-blend-mode: multiply;
 	transition: box-shadow $transition;
+	box-shadow:
+		0 0 0 2px black,
+		0 3px 15px 5px gray,
+		inset 0 3px 5px rgba(black, .1);
 
 	&.a-filter {
 		top: $size;
@@ -61,5 +66,9 @@ p {
     cursor: -webkit-grabbing;
     cursor: -moz-grabbing;
 		cursor: grabbing;
+		box-shadow:
+			0 0 0 2px black,
+			0 5px 16px 7px gray,
+			inset 0 1px 5px rgba(black, .2);
 	}
 }
