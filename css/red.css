@@ -1,74 +1,67 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900);
+html, body {
+  height: 100%;
+}
 
-$transition : .3s;
-$size : 150px;
-
-$a : cyan;
-$b : red;
-
-html, body { height: 100%; }
 body {
-	position: relative;
-	overflow: hidden;
-	height: 100vh;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
 }
 
 p {
-	text-align: justify;
-	font-family: Source Sans Pro, sans-serif;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	user-select: none;
-	white-space: pre-wrap;
-	padding: 40px;
-	font-size: calc(16px + 1vw);
-	mix-blend-mode: multiply;
+  text-align: justify;
+  font-family: Source Sans Pro, sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  white-space: pre-wrap;
+  padding: 40px;
+  font-size: calc(16px + 1vw);
+  mix-blend-mode: multiply;
 }
 
-.a-filter { color: $a; }
-.b-filter { color: $b; }
+.a-filter {
+  color: cyan;
+}
+
+.b-filter {
+  color: red;
+}
 
 .glasses {
-	position: absolute;
-	top: 15px;
-	left: 15px;
-	right: 15px;
-	bottom: 15px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
 }
 
 .lens {
-	position: absolute;
-	top: 0;
-	width: $size;
-	height: $size;
-	border-radius: $size;
-	cursor: move;
+  position: absolute;
+  top: 0;
+  width: 400px;
+  height: 400px;
+  cursor: move;
   cursor: -webkit-grab;
-  cursor: -moz-grab;
-	cursor: grab;
-	background: currentColor;
-	mix-blend-mode: multiply;
-	transition: box-shadow $transition;
-	box-shadow:
-		0 0 0 2px black,
-		0 3px 15px 5px gray,
-		inset 0 3px 5px rgba(black, .1);
-
-	&.a-filter {
-		top: $size;
-		left: $size;
-	}
-
-	&:active {
-		transition-duration: $transition/2;
-    cursor: -webkit-grabbing;
-    cursor: -moz-grabbing;
-		cursor: grabbing;
-		box-shadow:
-			0 0 0 2px black,
-			0 5px 16px 7px gray,
-			inset 0 1px 5px rgba(black, .2);
-	}
+  cursor: grab;
+  background: currentColor;
+  mix-blend-mode: multiply;
+  -webkit-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+}
+.lens.a-filter {
+  top: 400px;
+  left: 400px;
+}
+.lens:active {
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
 }
