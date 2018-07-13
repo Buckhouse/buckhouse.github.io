@@ -23,7 +23,7 @@ p {
   white-space: pre-wrap;
   padding: 40px;
   font-size: calc(16px + 1vw);
-  mix-blend-mode: difference;
+  mix-blend-mode: color;
 }
 
 .a-filter {
@@ -51,7 +51,7 @@ p {
   cursor: -webkit-grab;
   cursor: grab;
   background: currentColor;
-  mix-blend-mode: difference;
+  mix-blend-mode: color;
   -webkit-transition: box-shadow 0.3s;
   transition: box-shadow 0.3s;
 }
