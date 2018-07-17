@@ -257,7 +257,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
   float: left;
-  width: 30%;
+  width: 40%;
   padding: 10px;
 }
 
