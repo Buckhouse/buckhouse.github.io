@@ -295,10 +295,10 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       -webkit-transform: translate(-50%,0%);
       }
       IMG.article2up {
-        width: 40%;
+        width: 50%;
         position: relative;
         float: left;
-        padding: 10px;
+        padding: 1em;
         }
 
     IMG.logo {
@@ -363,6 +363,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       width: 50%;
       position: relative;
       float: left;
+      padding: 1em;
       }
 
   IMG.logo {
@@ -437,6 +438,12 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       transform: translate(-50%,0%);
       -webkit-transform: translate(-50%,0%);
       }
+      IMG.article2up {
+      width: 50%;
+      position: relative;
+      float: left;
+      padding: 1em;
+      }
 }
 
 @media screen and (min-width: 900px){
@@ -494,6 +501,12 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       transform: translate(-50%,0%);
       -webkit-transform: translate(-50%,0%);
     }
+      IMG.article2up {
+      width: 50%;
+      position: relative;
+      float: left;
+      padding: 1em;
+      }
 }
 
 
@@ -552,6 +565,12 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       transform: translate(-50%,0%);
       -webkit-transform: translate(-50%,0%);
     }
+      IMG.article2up {
+      width: 50%;
+      position: relative;
+      float: left;
+      padding: 1em;
+      }
     #copy-holder {
       width: 100%;
       padding-top: 2.5em;
