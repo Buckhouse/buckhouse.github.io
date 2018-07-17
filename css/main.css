@@ -295,7 +295,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       -webkit-transform: translate(-50%,0%);
       }
       IMG.article2up {
-        width: 50%;
+        width: 40%;
         position: relative;
         float: left;
         padding: 1em;
@@ -360,7 +360,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     -webkit-transform: translate(-50%,0%);
     }
     IMG.article2up {
-      width: 50%;
+      width: 40%;
       position: relative;
       float: left;
       padding: 1em;
@@ -439,7 +439,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       -webkit-transform: translate(-50%,0%);
       }
       IMG.article2up {
-      width: 50%;
+      width: 40%;
       position: relative;
       float: left;
       padding: 1em;
@@ -566,7 +566,7 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
       -webkit-transform: translate(-50%,0%);
     }
       IMG.article2up {
-      width: 50%;
+      width: 40%;
       position: relative;
       float: left;
       padding: 1em;
