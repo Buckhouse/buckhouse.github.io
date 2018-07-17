@@ -254,6 +254,20 @@ https://medium.com/@ryanallen_com/responsive-type-with-only-css-82b846370cc9
     -webkit-transform: translate(-50%,0%);
   }
 
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
   @media screen and (min-width: 300px){
     .firstcharacter {
     float: left;
