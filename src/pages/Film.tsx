@@ -30,7 +30,7 @@ const films = [
   {
     title: 'Penguins Christmas Caper',
     imdb: 'https://www.imdb.com/title/tt0484439',
-    poster: 'src={${import.meta.env.BASE_URL}images/photo.jpg}/film-posters/caper.jpg',
+    poster: `src={${import.meta.env.BASE_URL}images/photo.jpg}/film-posters/caper.jpg`,
   },
   {
     title: 'Shrek the Halls',
@@ -60,7 +60,7 @@ const films = [
   {
     title: 'The Peacemaker',
     imdb: 'https://www.imdb.com/title/tt0119874',
-    poster: 'src={${import.meta.env.BASE_URL}images/film-posters/peacemaker.jpg',
+    poster: `src={${import.meta.env.BASE_URL}images/film-posters/peacemaker.jpg`,
   },
 ];
 
