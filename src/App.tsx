@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Gallery from './components/Gallery/Gallery';
 import ArtworkDetail from './components/Gallery/ArtworkDetail';
 import Navbar from './components/Navbar/Navbar';
