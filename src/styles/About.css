@@ -7,9 +7,11 @@
 }
 
 .about-description {
-  line-height: 1.7;
+  text-align: center;
   font-size: 1rem;
-  margin-bottom: 2rem;
+  max-width: 65ch;
+  margin: 1rem auto 2rem;
+  font-family: var(--body-font-family);
 }
 
 .about-description a {
