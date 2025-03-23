@@ -7,8 +7,8 @@
 }
 
 .about-description {
-  text-align: center;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  line-height: 150%;
   max-width: 65ch;
   margin: 1rem auto 2rem;
   font-family: var(--body-font-family);
@@ -23,7 +23,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
-  margin-top: 2rem;
+  max-width: 550px;
+  margin: 2rem auto 0 auto;  /* This will center it horizontally */
   color: var(--primary-color);
 }
 
