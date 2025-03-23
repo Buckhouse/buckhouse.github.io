@@ -1,0 +1,181 @@
+/* src/styles/Library.css */
+
+.library-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: .5rem 2rem 2rem;
+  background-color: var(--bg-white);
+  font-family: var(--body-font-family);
+}
+
+h1 {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
+  letter-spacing:0px;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  text-align: center;
+  font-size: 1rem;
+  max-width: 65ch;
+  margin: 1rem auto 2rem;
+  font-family: var(--body-font-family);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-white-half);
+  color: black;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-family: var(--menu-font-family);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filter-btn:hover:not(.active) {
+  transform: scale(1.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-white-half);
+  color: var(--text-color);
+}
+
+.filter-btn.active {
+  background-color: var(--hover-color);
+  color: var(--bg-white);
+  border-color: currentColor;
+  box-shadow: none;
+}
+
+/* Category-specific pill border colors */
+.filter-btn.art { border-color: var(--art-color); }
+.filter-btn.science { border-color: var(--science-color); }
+.filter-btn.biology { border-color: var(--biology-color); }
+.filter-btn.story { border-color: var(--story-color); }
+.filter-btn.music { border-color: var(--color-color); }
+.filter-btn.architecture { border-color: var(--architecture-color); }
+.filter-btn.design { border-color: var(--design-color); }
+.filter-btn.typography { border-color: var(--typography-color); }
+.filter-btn.drawing { border-color: var(--color-color); }
+.filter-btn.anatomy { border-color: var(--anatomy-color); }
+.filter-btn.film { border-color: var(--film-color); }
+.filter-btn.color { border-color: var(--color-color); }
+.filter-btn.buckhouse { border-color: var(--branding-color); }
+.filter-btn.game-design { border-color: var(--design-color); }
+.filter-btn.ai { border-color: var(--science-color); }
+.filter-btn.tools { border-color: var(--tools-color); }
+.filter-btn.jobs { border-color: var(--branding-color); }
+.filter-btn.dance { border-color: var(--art-color); }
+.filter-btn.computer-science { border-color: var(--science-color); }
+.filter-btn.philosophy { border-color: var(--theory-color); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Square cards */
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: var(--bg-white-half);
+  border: 1px solid;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  background-color: var(bg-white-half);
+}
+
+/* Category-based border colors for cards */
+.timeline-item.art { border-color: var(--art-color) !important; }
+.timeline-item.science { border-color: var(--science-color) !important; }
+.timeline-item.biology { border-color: var(--biology-color) !important; }
+.timeline-item.story { border-color: var(--story-color) !important; }
+.timeline-item.music { border-color: var(--color-color) !important; }
+.timeline-item.architecture { border-color: var(--architecture-color) !important; }
+.timeline-item.design { border-color: var(--design-color) !important; }
+.timeline-item.typography { border-color: var(--typography-color) !important; }
+.timeline-item.drawing { border-color: var(--color-color) !important; }
+.timeline-item.anatomy { border-color: var(--anatomy-color) !important; }
+.timeline-item.film { border-color: var(--film-color) !important; }
+.timeline-item.color { border-color: var(--color-color) !important; }
+.timeline-item.buckhouse { border-color: var(--branding-color) !important; }
+.timeline-item.game-design { border-color: var(--design-color) !important; }
+.timeline-item.ai { border-color: var(--science-color) !important; }
+.timeline-item.tools { border-color: var(--tools-color) !important; }
+.timeline-item.jobs { border-color: var(--branding-color) !important; }
+.timeline-item.dance { border-color: var(--art-color) !important; }
+.timeline-item.computer-science { border-color: var(--science-color) !important; }
+.timeline-item.philosophy { border-color: var(--theory-color) !important; }
+
+
+.timeline-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  padding-top: 4rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+
+}
+
+.timeline-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.timeline-content p {
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+.timeline-content p:nth-child(1), .timeline-content p:nth-child(2) {
+  font-size: 0.8rem;
+}
+
+.timeline-content p:nth-child(3) {
+  font-size: 0.9rem;
+}
+
+.learn-more {
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: 500;
+}

@@ -1,0 +1,161 @@
+/* src/styles/Library.css */
+
+.library-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2rem;
+  background-color: var(--bg-white);
+  font-family: var(--body-font-family);
+}
+
+h1 {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-family: var(--heading-font-family);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  text-align: center;
+  font-size: 1rem;
+  max-width: 65ch;
+  margin: 1rem auto 2rem;
+  font-family: var(--body-font-family);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  border: 1px solid var(--text-color);
+  background-color: var(--bg-white-half);
+  color: black;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.85rem;
+  font-family: var(--menu-font-family);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-btn:hover:not(.active) {
+  transform: scale(1.03);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn.active {
+  background-color: var(--hover-color);
+  color: var(--bg-white);
+  border-color: currentColor;
+}
+
+/* Category-specific pill border colors */
+.filter-btn.art { border-color: var(--art-color); }
+.filter-btn.science { border-color: var(--science-color); }
+.filter-btn.biology { border-color: var(--biology-color); }
+.filter-btn.story { border-color: var(--story-color); }
+.filter-btn.music { border-color: var(--color-color); }
+.filter-btn.architecture { border-color: var(--architecture-color); }
+.filter-btn.design { border-color: var(--design-color); }
+.filter-btn.typography { border-color: var(--typography-color); }
+.filter-btn.drawing { border-color: var(--color-color); }
+.filter-btn.anatomy { border-color: var(--anatomy-color); }
+.filter-btn.film { border-color: var(--film-color); }
+.filter-btn.color { border-color: var(--color-color); }
+.filter-btn.buckhouse { border-color: var(--branding-color); }
+.filter-btn.game-design { border-color: var(--design-color); }
+.filter-btn.ai { border-color: var(--science-color); }
+.filter-btn.tools { border-color: var(--tools-color); }
+.filter-btn.jobs { border-color: var(--branding-color); }
+.filter-btn.dance { border-color: var(--art-color); }
+.filter-btn.computer-science { border-color: var(--science-color); }
+.filter-btn.philosophy { border-color: var(--theory-color); }
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.timeline-item {
+  width: 300px;
+  height: 320px;
+  background-color: var(--bg-white-half);
+  border: 2px solid var(--default-border-color);
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-item:hover {
+  transform: scale(1.015);
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Category-based border colors for cards */
+.timeline-item.art { border-color: var(--art-color); }
+.timeline-item.science { border-color: var(--science-color); }
+.timeline-item.biology { border-color: var(--biology-color); }
+.timeline-item.story { border-color: var(--story-color); }
+.timeline-item.music { border-color: var(--color-color); }
+.timeline-item.architecture { border-color: var(--architecture-color); }
+.timeline-item.design { border-color: var(--design-color); }
+.timeline-item.typography { border-color: var(--typography-color); }
+.timeline-item.drawing { border-color: var(--color-color); }
+.timeline-item.anatomy { border-color: var(--anatomy-color); }
+.timeline-item.film { border-color: var(--film-color); }
+.timeline-item.color { border-color: var(--color-color); }
+.timeline-item.buckhouse { border-color: var(--branding-color); }
+.timeline-item.game-design { border-color: var(--design-color); }
+.timeline-item.ai { border-color: var(--science-color); }
+.timeline-item.tools { border-color: var(--tools-color); }
+.timeline-item.jobs { border-color: var(--branding-color); }
+.timeline-item.dance { border-color: var(--art-color); }
+.timeline-item.computer-science { border-color: var(--science-color); }
+.timeline-item.philosophy { border-color: var(--theory-color); }
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.timeline-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.timeline-content p {
+  font-size: 0.85rem;
+  margin: 0.3rem 0;
+}
+
+.learn-more {
+  margin-top: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-weight: 500;
+}

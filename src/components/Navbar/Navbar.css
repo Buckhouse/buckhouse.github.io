@@ -1,0 +1,146 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar container */
+  /* Navbar container */
+.navbar {
+    background-color: var(--semi-bg-color); 
+    color: var(--text-color);
+    height: var(--navbar-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    font-family: var(--menu-font-family);
+    text-transform: uppercase;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: center; /* Change from space-between to center */
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--spacing-xl);
+    max-width: var(--container-width);
+    margin: 0 auto;
+  }
+  
+  /* Desktop menu */
+  .navbar-menu {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar-menu li {
+    margin: 0 1rem; /* Change from margin-left to margin on both sides */
+  }
+  
+  .navbar-menu a {
+    color: var(--text-color); /* Changed to text-color */
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color var(--transition-normal);
+  }
+  
+  .navbar-menu a:hover {
+    color: var(--hover-color); /* Changed to hover-color */
+  }
+  
+  /* Hamburger icon */
+  .navbar-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+  }
+  
+  .navbar-hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color); /* Fixed: missing parenthesis and changed to text-color */
+    border-radius: 10px;
+  }
+  
+  /* Mobile menu */
+  .navbar-mobile-menu {
+    display: none;
+    position: absolute;
+    top: var(--navbar-height); /* Changed to use variable */
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-color); /* Changed to primary-color */
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+  }
+  
+  .navbar-mobile-menu.active {
+    max-height: 300px;
+  }
+  
+  .navbar-mobile-menu li {
+    text-align: center;
+    margin: 0;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-mobile-menu a {
+    color: var(--bg-white); /* Changed for mobile dropdown menu text color */
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase; /* Added for consistency */
+  }
+  
+  /* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+    }
+    
+    .navbar-hamburger {
+      display: flex;
+      position: absolute; /* Position it */
+      right: var(--spacing-xl); /* Align to the right */
+    }
+    
+    .navbar-container {
+      justify-content: center; /* Keep it centered */
+    }
+    
+    .navbar-mobile-menu {
+      display: flex;
+    }
+  }
+
+  .navbar-newsletter {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: var(--menu-font-family);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .navbar-menu a:hover:not(.navbar-newsletter) {
+    color: var(--primary-hover-color);
+    text-shadow: 0 0 5px white;
+    transition: text-shadow 0.3s ease, color 0.2s ease;
+  }
+
+  .navbar-newsletter:hover {
+    background-color: var(--primary-hover-color) !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }

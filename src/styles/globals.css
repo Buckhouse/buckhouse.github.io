@@ -1,0 +1,126 @@
+/* src/styles/globals.css */
+
+/* Fonts */
+
+
+@font-face {
+    font-family: 'Pitch Sans';
+    src: url('/fonts/PitchSansApp-Regular.woff2') format('woff2'),
+         url('/fonts/PitchSansApp-Medium.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Unica77';
+    src: url('/fonts/Unica77LLTT-Bold.woff2') format('woff2'),
+         url('/fonts/Unica77LLTT-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Unica77';
+    src: url('/fonts/Unica77LLTT-Bold.woff2') format('woff2'),
+         url('/fonts/Unica77LLTT-Regular.woff') format('woff');
+    font-weight: 700;
+    font-style: bold;
+}
+
+@font-face {
+    font-family: 'Unica77';
+    src: url('/fonts/Unica77LLWeb-Medium.woff2') format('woff2'),
+         url('/fonts/Unica77LLWeb-Medium.woff') format('woff');
+    font-weight: 600;
+    font-style: medium;
+}
+
+@font-face {
+    font-family: 'FinancierDisplay';
+    src: url('/fonts/FinancierDisplayApp-Semibold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Rosart-Regular';
+    src: url('/fonts/Rosart-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Rosart-Bold';
+    src: url('/fonts/Rosart-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Rosart-Bold';
+    src: url('/fonts/Rosart-BoldItalic.woff') format('woff');
+}
+/* Design Tokens */
+:root {
+    /* Colors */
+    --history-color: #ff6b00;
+    --science-color: #00d4ff;
+    --biology-color: #00ff88;
+    --story-color: #ff00c8;
+    --architecture-color: #8400ff;
+    --design-color: #ff0051;
+    --art-color: #ffb300;
+    --tools-color: #4a4a4a;
+    --creativity-color: #ff3c00;
+    --branding-color: #0026ff;
+    --theory-color: #b700ff;
+    --typography-color: #00ffd5;
+    --anatomy-color: #ff006e;
+    --film-color: #5900ff;
+    --color-color: #00ff51;
+    
+    /* UI Colors */
+    --bg-white-half: #fcfbf6; 
+    --bg-white: #E5E2E1;
+    --semi-bg-color: #f1efee;
+
+    --primary-color: #2c3e50;
+    --primary-hover-color: #507091;
+    --secondary-color: #2c3e50;
+    --text-color: #333;
+    --text-visited-color: #000000;
+    --hover-color: #2c3e50;
+    
+    /* Typography */
+    --menu-font-family: 'Pitch Sans', sans-serif;
+    --heading-font-family: 'FinancierDisplay', serif;
+    --body-font-family: 'Unica77', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 3rem;
+    
+    /* Layout */
+    --container-width: 1200px;
+    --navbar-height: 60px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Base styles */
+body {
+    font-family: var(--body-font-family);
+    color: var(--text-color);
+    background-color: var(--bg-white);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font-family);
+}
+
+a, a:visited {
+    color: var(--text-color);
+}

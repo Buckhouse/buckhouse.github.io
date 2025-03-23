@@ -1,0 +1,42 @@
+/* src/components/Gallery/Gallery.css */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Responsive stacking on smaller screens */
+  @media (max-width: 768px) {
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 1rem;
+    }
+  }
+/* Default grid layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust for better balance */
+    gap: 20px;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Ensure featured artworks take up more space */
+  .artwork-card.featured {
+    grid-column: span 2 !important;
+    grid-row: span 2 !important;
+  }
+  
+  /* Ensure all images inside the grid behave consistently */
+  .artwork-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }

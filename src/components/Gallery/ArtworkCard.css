@@ -1,0 +1,44 @@
+/* src/components/Gallery/ArtworkCard.css */
+
+/* src/components/Gallery/ArtworkCard.css */
+
+.artwork-card {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* makes the container a perfect square */
+    overflow: hidden;
+  }
+  
+  /* Make the <img> fill that square and crop from the center */
+  .artwork-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* this makes it fill the container, cropping as needed */
+    object-position: 50% 50%; /* centers the crop */
+  }
+
+  .artwork-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+    /* Title sits below the square, so it doesn't affect its height */
+
+  .artwork-card-title {
+    margin-top: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-color);
+    font-family: var(--menu-font-family);
+    font-family: var(--body-font-family);
+    background-color: var(--bg-white);
+  }
+
+.artwork-card-link {
+    text-decoration: none;
+    color: inherit;
+  }
