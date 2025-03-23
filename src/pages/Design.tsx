@@ -25,7 +25,7 @@ const Design: React.FC = () => {
       },
       container: {
         width: '100%',
-        height: '800px',
+        height: '100%',
       },
     };
 
