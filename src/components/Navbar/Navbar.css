@@ -144,3 +144,8 @@
     background-color: var(--primary-hover-color) !important;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
+
+  .navbar-mobile-menu a,
+.navbar-mobile-menu a:visited {
+  color: var(--bg-white) !important; /* Ensures visited links stay white */
+}
