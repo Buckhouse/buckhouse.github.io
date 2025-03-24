@@ -85,7 +85,8 @@
   }
   
   .navbar-mobile-menu.active {
-    max-height: 300px;
+    max-height: 100vh;  /* allows it to fill the viewport height, prevents clipping */
+    overflow-y: auto;   /* adds scrolling if the menu is longer than the viewport */
   }
   
   .navbar-mobile-menu li {
