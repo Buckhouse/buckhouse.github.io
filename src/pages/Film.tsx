@@ -72,31 +72,21 @@ const Film: React.FC = () => {
       </p>
 
       <div className="film-list">
-        {films.map((film) => (
-          <div className="film-item" key={film.title}>
-            <a href={film.imdb} target="_blank" rel="noreferrer">
-              <h3>{film.title}</h3>
-            </a>
-            {film.trailer ? (
-                <video
-                controls
-                className="film-video"
-                src={film.trailer}
-                preload="metadata"
-                poster={film.poster} 
-              >
-                Sorry, your browser doesn’t support embedded videos.
-              </video>
-                ) : film.poster ? (
-                <img
-                    src={film.poster}
-                    alt={`${film.title} poster`}
-                    className="film-still"
-                />
-                ) : null}
-          </div>
-        ))}
-      </div>
+  {films.map((film) => (
+    <div className="film-item" key={film.title}>
+      <a href={film.imdb} target="_blank" rel="noreferrer">
+        <h3>{film.title}</h3>
+      </a>
+      {film.poster && (
+        <img
+          src={film.poster}
+          alt={`${film.title} poster`}
+          className="film-still"
+        />
+      )}
+    </div>
+  ))}
+</div>
     </div>
   );
 };
