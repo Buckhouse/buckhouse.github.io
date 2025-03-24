@@ -13,7 +13,7 @@
     height: var(--navbar-height);
     width: 100%;
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     z-index: 1000;
     font-family: var(--menu-font-family);
@@ -47,6 +47,16 @@
     transition: color var(--transition-normal);
   }
   
+  .navbar-menu a {
+    display: inline-flex;          /* Enables precise vertical alignment */
+    align-items: center;           /* Centers vertically */
+    justify-content: center;       /* Centers horizontally (optional) */
+    vertical-align: middle;        /* Explicit vertical alignment */
+    line-height: 1;                /* Standardizes height and reduces discrepancies */
+    gap: 0.25rem;                  /* Small spacing between emoji and text */
+  }
+
+
   .navbar-menu a:hover {
     color: var(--hover-color); /* Changed to hover-color */
   }
@@ -78,7 +88,6 @@
     background-color: var(--primary-color); /* Changed to primary-color */
     flex-direction: column;
     list-style: none;
-    padding: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition-normal);
@@ -104,7 +113,7 @@
   }
   
   /* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
     .navbar-menu {
       display: none;
     }
@@ -124,17 +133,25 @@
     }
   }
 
+ 
+
   .navbar-newsletter {
+    display: inline-flex;        
+    align-items: center;          
+    justify-content: center;      
     background-color: var(--primary-color);
     color: white !important;
-    padding: 8px 16px;
+    padding: 8px 16px; /* Adjust vertical padding slightly */
     border-radius: 999px;
     font-weight: 500;
     text-transform: uppercase;
     font-family: var(--menu-font-family);
     text-decoration: none;
+    vertical-align: middle;
+    margin-top: -5px; /* Slight upward adjustment for perfect alignment */
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
+}
+
   .navbar-menu a:hover:not(.navbar-newsletter) {
     color: var(--primary-hover-color);
     text-shadow: 0 0 5px white;
