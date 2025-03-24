@@ -40,6 +40,7 @@ function Navbar() {
 
         {/* Mobile Menu */}
         <ul className={`navbar-mobile-menu ${isOpen ? 'active' : ''}`}>
+          <li><Link to="/" onClick={toggleMenu}>✎ Art</Link></li>
           <li><Link to="/design" onClick={toggleMenu}>☎ 24-Hour Hotline</Link></li>
           <li><Link to="/library" onClick={toggleMenu}>📖 Library</Link></li>
           <li><Link to="/film" onClick={toggleMenu}>🎬 Film</Link></li>

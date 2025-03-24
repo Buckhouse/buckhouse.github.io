@@ -142,7 +142,7 @@ h1 {
   top: 0;
   left: 0;
   padding: 2rem;
-  padding-top: 4rem;
+  padding-top: 4rem; 
   width: 100%;
   height: 100%;
   display: flex;
@@ -150,7 +150,6 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-
 }
 
 .timeline-content h3 {
@@ -178,4 +177,17 @@ h1 {
   color: var(--primary-color);
   text-decoration: underline;
   font-weight: 500;
+}
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .timeline-content {
+    padding-top: 2rem; /* Less padding for mobile */
+  }
+  .timeline-content p:nth-child(1), .timeline-content p:nth-child(2) {
+    font-size: 0.7rem;
+  }
+  
+  .timeline-content p:nth-child(3) {
+    font-size: 0.7rem;
+  }
 }
