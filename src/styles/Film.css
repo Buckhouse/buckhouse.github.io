@@ -16,7 +16,7 @@
 .film-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .film-item h3 {

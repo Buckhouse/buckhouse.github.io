@@ -22,7 +22,7 @@ const films = [
     imdb: 'https://www.imdb.com/title/tt0479952',
     poster: `${import.meta.env.BASE_URL}images/film-posters/mad2.jpg`,
   },
-    {
+  {
     title: 'Madagascar',
     imdb: 'https://www.imdb.com/title/tt0351283',
     poster: `${import.meta.env.BASE_URL}images/film-posters/mad.jpg`,
@@ -64,6 +64,7 @@ const films = [
   },
 ];
 
+
 const Film: React.FC = () => {
   return (
     <div className="film-container">
@@ -72,21 +73,27 @@ const Film: React.FC = () => {
       </p>
 
       <div className="film-list">
-  {films.map((film) => (
-    <div className="film-item" key={film.title}>
-      <a href={film.imdb} target="_blank" rel="noreferrer">
-        <h3>{film.title}</h3>
-      </a>
-      {film.poster && (
-        <img
-          src={film.poster}
-          alt={`${film.title} poster`}
-          className="film-still"
-        />
-      )}
-    </div>
-  ))}
-</div>
+        {films.map((film) => (
+          <a
+            key={film.title}
+            href={film.imdb}
+            target="_blank"
+            rel="noreferrer"
+            className="film-item-link"
+          >
+            <div className="film-item">
+              {film.poster && (
+                <img
+                  src={film.poster}
+                  alt={`${film.title} poster`}
+                  className="film-still"
+                />
+              )}
+              <h3>{film.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   );
 };

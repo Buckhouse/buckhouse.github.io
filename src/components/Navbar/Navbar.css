@@ -54,6 +54,8 @@
     vertical-align: middle;        /* Explicit vertical alignment */
     line-height: 1;                /* Standardizes height and reduces discrepancies */
     gap: 0.25rem;                  /* Small spacing between emoji and text */
+    padding-top: 5px;
+    
   }
 
 
@@ -148,7 +150,7 @@
     font-family: var(--menu-font-family);
     text-decoration: none;
     vertical-align: middle;
-    margin-top: -5px; /* Slight upward adjustment for perfect alignment */
+    margin-top: 0px; /* Slight upward adjustment for perfect alignment */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
