@@ -1,172 +1,170 @@
 /* Basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container */
+.navbar {
+  background-color: rgba(245, 243, 242, 0.85);
+  color: var(--text-color);
+  height: var(--navbar-height);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-family: var(--menu-font-family);
+  text-transform: uppercase;
+}
+
+/* Split the navbar into two sections: menu and actions (newsletter + hamburger) */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--spacing-xl);
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Desktop Menu */
+.navbar-menu {
+  display: flex;
+  list-style: none;
+}
+
+.navbar-menu li {
+  margin: 0 1rem;
+}
+
+.navbar-menu a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color var(--transition-normal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+  gap: 0.25rem;
+}
+
+.navbar-menu a:hover {
+  color: var(--hover-color);
+}
+
+/* Action container for Newsletter and Hamburger */
+.navbar-action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Newsletter Button (styled independently) */
+.navbar-newsletter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white !important;
+  padding: 8px 16px;  /* Even padding on top and bottom */
+  border-radius: 999px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: var(--menu-font-family);
+  text-decoration: none;
+  vertical-align: middle;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-newsletter:hover {
+  background-color: var(--primary-hover-color) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hamburger Icon */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.navbar-hamburger span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text-color);
+  border-radius: 10px;
+}
+
+/* Mobile menu */
+.navbar-mobile-menu {
+  display: none;
+  position: absolute;
+  top: var(--navbar-height); /* Using variable */
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  flex-direction: column;
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.navbar-mobile-menu.active {
+  max-height: 100vh;  /* Allows it to fill the viewport height */
+  overflow-y: auto;   /* Adds scrolling if the menu is longer than the viewport */
+}
+
+.navbar-mobile-menu li {
+  text-align: center;
+  margin: 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-mobile-menu a {
+  color: var(--bg-white);
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.navbar-mobile-menu a,
+.navbar-mobile-menu a:visited {
+  color: var(--bg-white) !important;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 980px) {
+  /* Hide desktop menu and newsletter */
+  .navbar-menu,
+  .navbar-action,
+  .navbar-newsletter {
+    display: none;
   }
   
-  /* Navbar container */
-  /* Navbar container */
-.navbar {
-    /* background-color: var(--semi-bg-color); */
-    background-color: rgba(245, 243, 242, 0.85);
-    color: var(--text-color);
-    height: var(--navbar-height);
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    z-index: 1000;
-    font-family: var(--menu-font-family);
-    text-transform: uppercase;
+  /* Show hamburger icon with higher z-index so it's clickable */
+  .navbar-hamburger {
+    display: flex;
+    position: absolute;
+    right: var(--spacing-xl);
+    z-index: 1001;
   }
   
   .navbar-container {
-    display: flex;
-    justify-content: center; /* Change from space-between to center */
-    align-items: center;
-    height: 100%;
-    padding: 0 var(--spacing-xl);
-    max-width: var(--container-width);
-    margin: 0 auto;
+    justify-content: center;
   }
   
-  /* Desktop menu */
-  .navbar-menu {
-    display: flex;
-    list-style: none;
-  }
-  
-  .navbar-menu li {
-    margin: 0 1rem; /* Change from margin-left to margin on both sides */
-  }
-  
-  .navbar-menu a {
-    color: var(--text-color); /* Changed to text-color */
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color var(--transition-normal);
-  }
-  
-  .navbar-menu a {
-    display: inline-flex;          /* Enables precise vertical alignment */
-    align-items: center;           /* Centers vertically */
-    justify-content: center;       /* Centers horizontally (optional) */
-    vertical-align: middle;        /* Explicit vertical alignment */
-    line-height: 1;                /* Standardizes height and reduces discrepancies */
-    gap: 0.25rem;                  /* Small spacing between emoji and text */
-    padding-top: 5px;
-    
-  }
-
-
-  .navbar-menu a:hover {
-    color: var(--hover-color); /* Changed to hover-color */
-  }
-  
-  /* Hamburger icon */
-  .navbar-hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-    cursor: pointer;
-  }
-  
-  .navbar-hamburger span {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-color); /* Fixed: missing parenthesis and changed to text-color */
-    border-radius: 10px;
-  }
-  
-  /* Mobile menu */
+  /* Mobile menu is visible (collapsed by default via max-height) */
   .navbar-mobile-menu {
-    display: none;
-    position: absolute;
-    top: var(--navbar-height); /* Changed to use variable */
-    left: 0;
-    width: 100%;
-    background-color: var(--primary-color); /* Changed to primary-color */
-    flex-direction: column;
-    list-style: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-normal);
+    display: flex;
   }
-  
-  .navbar-mobile-menu.active {
-    max-height: 100vh;  /* allows it to fill the viewport height, prevents clipping */
-    overflow-y: auto;   /* adds scrolling if the menu is longer than the viewport */
-  }
-  
-  .navbar-mobile-menu li {
-    text-align: center;
-    margin: 0;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .navbar-mobile-menu a {
-    color: var(--bg-white); /* Changed for mobile dropdown menu text color */
-    text-decoration: none;
-    font-size: 1rem;
-    text-transform: uppercase; /* Added for consistency */
-  }
-  
-  /* Media Queries for Responsive Design */
-@media (max-width: 980px) {
-    .navbar-menu {
-      display: none;
-    }
-    
-    .navbar-hamburger {
-      display: flex;
-      position: absolute; /* Position it */
-      right: var(--spacing-xl); /* Align to the right */
-    }
-    
-    .navbar-container {
-      justify-content: center; /* Keep it centered */
-    }
-    
-    .navbar-mobile-menu {
-      display: flex;
-    }
-  }
-
- 
-
-  .navbar-newsletter {
-    display: inline-flex;        
-    align-items: center;          
-    justify-content: center;      
-    background-color: var(--primary-color);
-    color: white !important;
-    padding: 8px 16px; /* Adjust vertical padding slightly */
-    border-radius: 999px;
-    font-weight: 500;
-    text-transform: uppercase;
-    font-family: var(--menu-font-family);
-    text-decoration: none;
-    vertical-align: middle;
-    margin-top: 0px; /* Slight upward adjustment for perfect alignment */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-  .navbar-menu a:hover:not(.navbar-newsletter) {
-    color: var(--primary-hover-color);
-    text-shadow: 0 0 5px white;
-    transition: text-shadow 0.3s ease, color 0.2s ease;
-  }
-
-  .navbar-newsletter:hover {
-    background-color: var(--primary-hover-color) !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .navbar-mobile-menu a,
-.navbar-mobile-menu a:visited {
-  color: var(--bg-white) !important; /* Ensures visited links stay white */
 }
