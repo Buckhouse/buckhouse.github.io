@@ -4,26 +4,26 @@ import './Navbar.css';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef(null);
-  const hamburgerRef = useRef(null);
+  const menuRef = useRef<HTMLUListElement | null>(null);
+  const hamburgerRef = useRef<HTMLDivElement | null>(null);
 
   const toggleMenu = () => setIsOpen(prev => !prev);
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         menuRef.current &&
-        !menuRef.current.contains(event.target) &&
+        !menuRef.current.contains(event.target as Node) &&
         hamburgerRef.current &&
-        !hamburgerRef.current.contains(event.target)
+        !hamburgerRef.current.contains(event.target as Node)
       ) {
         closeMenu();
       }
     };
-
+  
     document.addEventListener('mousedown', handleClickOutside);
-
+  
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };

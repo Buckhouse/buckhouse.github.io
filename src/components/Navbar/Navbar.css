@@ -19,7 +19,6 @@
   text-transform: uppercase;
 }
 
-/* Split the navbar into two sections: menu and actions (newsletter + hamburger) */
 .navbar-container {
   display: flex;
   justify-content: space-between;
@@ -44,7 +43,7 @@
   color: var(--text-color);
   text-decoration: none;
   font-size: 1rem;
-  transition: color var(--transition-normal);
+  transition: color var(--transition-fast);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -57,33 +56,28 @@
   color: var(--hover-color);
 }
 
-/* Action container for Newsletter and Hamburger */
+/* Actions (Newsletter + Hamburger) */
 .navbar-action {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-/* Newsletter Button (styled independently) */
 .navbar-newsletter {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   background-color: var(--primary-color);
   color: white !important;
-  padding: 8px 16px;  /* Even padding on top and bottom */
+  padding: 8px 16px;
   border-radius: 999px;
   font-weight: 500;
-  text-transform: uppercase;
-  font-family: var(--menu-font-family);
   text-decoration: none;
-  vertical-align: middle;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease;
 }
 
 .navbar-newsletter:hover {
   background-color: var(--primary-hover-color) !important;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hamburger Icon */
@@ -103,11 +97,11 @@
   border-radius: 10px;
 }
 
-/* Mobile menu */
+/* Mobile Menu */
 .navbar-mobile-menu {
   display: none;
   position: absolute;
-  top: var(--navbar-height); /* Using variable */
+  top: var(--navbar-height);
   left: 0;
   width: 100%;
   background-color: var(--primary-color);
@@ -115,70 +109,55 @@
   list-style: none;
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-normal);
+  transition: max-height var(--transition-fast);
 }
 
 .navbar-mobile-menu.active {
-  max-height: 100vh;  /* Allows it to fill the viewport height */
-  overflow-y: auto;   /* Adds scrolling if the menu is longer than the viewport */
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .navbar-mobile-menu li {
-  text-align: center;
-  margin: 0;
-  padding: 1rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar-mobile-menu a {
-  color: var(--bg-white);
+  display: block;
+  padding: 1rem 0;
+  color: var(--bg-white) !important;
   text-decoration: none;
   font-size: 1rem;
   text-transform: uppercase;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  text-align: center;
 }
 
-.navbar-mobile-menu a,
-.navbar-mobile-menu a:visited {
-  color: var(--bg-white) !important;
+.navbar-mobile-menu a:hover,
+.navbar-mobile-menu li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive adjustments */
 @media (max-width: 980px) {
-  /* Hide desktop menu and newsletter */
   .navbar-menu,
   .navbar-action,
   .navbar-newsletter {
     display: none;
   }
-  
-  /* Show hamburger icon with higher z-index so it's clickable */
+
   .navbar-hamburger {
     display: flex;
     position: absolute;
     right: var(--spacing-xl);
     z-index: 1001;
   }
-  
+
   .navbar-container {
     justify-content: center;
   }
-  
-  /* Mobile menu is visible (collapsed by default via max-height) */
+
   .navbar-mobile-menu {
     display: flex;
   }
-  /* Enhanced hover effect for mobile menu */
-.navbar-mobile-menu li {
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.navbar-mobile-menu li:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.03);
-}
-
-.navbar-mobile-menu li:hover a {
-  color: var(--bg-white);
-}
-}
-
