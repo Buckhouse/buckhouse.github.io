@@ -167,4 +167,18 @@
   .navbar-mobile-menu {
     display: flex;
   }
+  /* Enhanced hover effect for mobile menu */
+.navbar-mobile-menu li {
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+.navbar-mobile-menu li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.03);
+}
+
+.navbar-mobile-menu li:hover a {
+  color: var(--bg-white);
+}
+}
+
