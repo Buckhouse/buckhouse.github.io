@@ -8,7 +8,8 @@
   /* Navbar container */
   /* Navbar container */
 .navbar {
-    background-color: var(--semi-bg-color); 
+    /* background-color: var(--semi-bg-color); */
+    background-color: rgba(245, 243, 242, 0.85);
     color: var(--text-color);
     height: var(--navbar-height);
     width: 100%;
