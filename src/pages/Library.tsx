@@ -1,131 +1,124 @@
 import React, { useEffect, useState } from 'react';
-import Papa from 'papaparse';
 import '../styles/Library.css';
 
 interface Course {
-  Title: string;
-  Instructor: string;
-  Institution: string;
-  Description: string;
-  URL: string;
-  Category: string;
+  title: string;
+  url: string;
+  description: string;
+  categories: string;
+  instructor?: string;
+  instructorBio?: string;
+  prerequisites?: string;
+  additionalInformation?: string;
+  institution?: string;
 }
 
-const Library: React.FC = () => {
+// Parses the category from URL hash
+function getCategoryFromHash(): string {
+  const hash = window.location.hash;
+  const queryStart = hash.indexOf('?');
+  if (queryStart === -1) return 'All';
+
+  const queryString = hash.substring(queryStart);
+  const params = new URLSearchParams(queryString);
+  const category = params.get('category');
+  return category ? decodeURIComponent(category) : 'All';
+}
+
+const Library = () => {
   const [courses, setCourses] = useState<Course[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
-  const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set(['all']));
+  const [selectedCategory, setSelectedCategory] = useState<string>(getCategoryFromHash());
 
   useEffect(() => {
-    Papa.parse('/courses.csv', {
-      download: true,
-      header: true,
-      complete: (results) => {
-        const data = results.data as Course[];
-        setCourses(data);
-
-        const categorySet = new Set<string>();
-        data.forEach((course) => {
-          course.Category?.split(',').forEach((cat) => {
-            categorySet.add(cat.trim());
-          });
-        });
-        setCategories(Array.from(categorySet));
-      },
-    });
+    fetch('/courses.json')
+      .then(response => response.json())
+      .then((data: Course[]) => setCourses(data));
   }, []);
 
-  const toggleFilter = (filter: string) => {
-    setActiveFilters((prev) => {
-      const updated = new Set(prev);
+  // Listen to hash changes (fixes typing in URL without hard refresh)
+  useEffect(() => {
+    const handleHashChange = () => {
+      setSelectedCategory(getCategoryFromHash());
+    };
 
-      if (filter === 'all') {
-        return new Set(['all']);
-      }
+    window.addEventListener('hashchange', handleHashChange);
 
-      if (updated.has(filter)) {
-        updated.delete(filter);
-      } else {
-        updated.add(filter);
-      }
+    // Cleanup listener when component unmounts
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
-      if (updated.size > 1 && updated.has('all')) {
-        updated.delete('all');
-      }
+  const categories = Array.from(
+    new Set(
+      courses.flatMap(course =>
+        course.categories.split(',').map(cat => cat.trim())
+      )
+    )
+  ).sort();
 
-      return updated.size === 0 ? new Set(['all']) : updated;
-    });
+  const filteredCourses = selectedCategory === 'All'
+    ? courses
+    : courses.filter(course => course.categories.includes(selectedCategory));
+
+  const formatCategoryClass = (category: string) =>
+    category.toLowerCase().replace(/\s+/g, '-');
+
+  // Updates URL hash when clicking categories
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+    if (category === 'All') {
+      window.location.hash = '#/library';
+    } else {
+      window.location.hash = `#/library?category=${encodeURIComponent(category)}`;
+    }
   };
-
-  const filteredCourses =
-    activeFilters.has('all')
-      ? courses
-      : courses.filter((course) => {
-          const courseCategories = course.Category?.split(',').map((cat) =>
-            cat.trim().toLowerCase().replace(/\s+/g, '-')
-          );
-          return courseCategories?.some((cat) => activeFilters.has(cat));
-        });
 
   return (
     <div className="library-container">
       <h1>Library</h1>
+
       <p className="description">
-  I put together this small athenaeum of courses and resources collected from across the internet.
-  Some of these I’ve created, others are from other people.
-</p>
-<p className="description">
-  <a
-    href="https://airtable.com/appqB1VAs2ZN5Df6j/pagOX4Og9v5aytpYf/form"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Please suggest a new course or resource.
-  </a>
-</p>
+        I put together this small athenaeum of courses and resources collected from across the internet.<br />
+        Some of these I’ve created, others are from other people.
+      </p>
+      <p className="description">
+        <a
+          href="https://airtable.com/appqB1VAs2ZN5Df6j/pagOX4Og9v5aytpYf/form"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Please suggest a new course or resource.
+        </a>
+      </p>
 
       <div className="filter-buttons">
         <button
-          className={`filter-btn ${activeFilters.has('all') ? 'active' : ''}`}
-          onClick={() => toggleFilter('all')}
+          className={`filter-btn ${selectedCategory === 'All' ? 'active' : ''}`}
+          onClick={() => handleCategoryClick('All')}
         >
           All
         </button>
-        {categories.map((cat) => {
-          const className = cat.toLowerCase().replace(/\s+/g, '-');
-          return (
-            <button
-              key={cat}
-              className={`filter-btn ${className} ${activeFilters.has(className) ? 'active' : ''}`}
-              onClick={() => toggleFilter(className)}
-            >
-              {cat}
-            </button>
-          );
-        })}
+        {categories.map(category => (
+          <button
+            key={category}
+            className={`filter-btn ${formatCategoryClass(category)} ${selectedCategory === category ? 'active' : ''}`}
+            onClick={() => handleCategoryClick(category)}
+          >
+            {category}
+          </button>
+        ))}
       </div>
 
       <div className="timeline">
-        {filteredCourses.map((course, index) => {
-          const firstCategoryClass = course.Category
-            ?.split(',')[0]
-            .trim()
-            .toLowerCase()
-            .replace(/\s+/g, '-');
-
+        {filteredCourses.map(course => {
+          const firstCategory = formatCategoryClass(course.categories.split(',')[0].trim());
           return (
-            <a
-              key={index}
-              className={`timeline-item ${firstCategoryClass}`}
-              href={course.URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a key={course.url} href={course.url} className={`timeline-item ${firstCategory}`}>
               <div className="timeline-content">
-                <h3>{course.Title}</h3>
-                <p>{course.Instructor}<br />{course.Institution}</p>
-                <p>{course.Description}</p>
-                <span className="learn-more">Learn more</span>
+                <h3>{course.title}</h3>
+                <p>{course.description}</p>
+                {course.instructor && <p><strong>Instructor:</strong> {course.instructor}</p>}
+                {course.prerequisites && <p><strong>Prerequisites:</strong> {course.prerequisites}</p>}
+                <p className="learn-more">Learn More</p>
               </div>
             </a>
           );
