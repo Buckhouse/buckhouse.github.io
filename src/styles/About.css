@@ -63,3 +63,10 @@
   height: 20px;
   flex-shrink: 0;
 }
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;  /* Optional, gives nice rounded corners */
+  display: block;
+  margin: 0 auto 2rem auto; /* Centers horizontally, adds margin below */
+}

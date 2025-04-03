@@ -18,7 +18,13 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="about-container">
+    <div className="about-container"> 
+      <img 
+        src="/images/James_Buckhouse_Profile_Pic.jpg" 
+        alt="James Buckhouse"
+        className="about-image"
+      />
+
       <p className="about-description">
         James Buckhouse believes story, art, and design can bend the arc of humanity's progress, if you do it right, and brings that idea into everything he does: from movies to startups to paintings to books and to <a href="https://www.instagram.com/p/CG6c1ijpwIo/" target="_blank" rel="noreferrer">ballets</a>.
 
@@ -29,7 +35,7 @@ const About: React.FC = () => {
         As <a href="https://www.sequoiacap.com/people/james-buckhouse/" target="_blank" rel="noreferrer">Design Partner</a> at Sequoia, he <a href="https://www.sequoiacap.com/article/seven-questions-with-james-buckhouse/" target="_blank" rel="noreferrer">works with founders</a> from idea to IPO and beyond to help them design their companies, products, cultures, and businesses. Buckhouse got his start in <a href="/film">film</a>, lensing shots, crafting character arcs, and punching up story for the <a href="/film">Shrek, Madagascar, and Matrix</a> series.
 
         <br /><br />
-        He regularly guest lectures at <a href="https://buckhouse.medium.com/the-structure-of-story-reading-list-fa8308a87860" target="_blank" rel="noreferrer">Harvard GSD</a>, Yale Architecture, <a href="https://www.youtube.com/watch?v=hG5i05kRYmk" target="_blank" rel="noreferrer">Stanford GSB</a>, and d.school. Previously at Twitter, he authored <a href="https://medium.com/design-story/story-map-3cc64033128e" target="_blank" rel="noreferrer">UX patents</a> for emoji replies and social opinion polls.
+        He regularly guest lectures at <a href="https://buckhouse.medium.com/the-structure-of-story-reading-list-fa8308a87860" target="_blank" rel="noreferrer">Harvard GSD</a>, Yale Architecture, <a href="https://www.youtube.com/watch?v=hG5i05kRYmk" target="_blank" rel="noreferrer">Stanford GSB</a>, and d.school. Previously at Twitter, he authored <a href="https://read.cv/buckhouse" target="_blank" rel="noreferrer">UX patents</a> for emoji replies and social opinion polls.
       </p>
 
       <div className="social-links">
