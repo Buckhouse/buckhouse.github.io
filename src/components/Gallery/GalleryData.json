@@ -5,9 +5,10 @@
       "featured": true,
       "date": "DEC 2024",
       "imageURL": "/images/image_66.jpg",
-      "title": "Maryon Park Intstallation View",
-      "description": "Oil on wood panel. 18 in x 24 in",
-      "media": "Oil on wood. 18 in x 24 in"
+      "videoURL": "/images/video/mayron_install.mp4",
+      "title": "Maryon Park Installation View",
+      "description": "Oil on wood panel with video installation. 18 in x 24 in",
+      "media": "Oil on wood, video. 18 in x 24 in"
     },
     {
       "id": "2",
@@ -284,9 +285,9 @@
       "featured": false,
       "date": "SEP 2018",
       "imageURL": "/images/image_33.jpg",
-      "title": "Video Install",
+      "title": "Video Installation",
       "description": "Video Installation for SENSORIUM at San Francisco Ballet.",
-      "media": "Oil on Linen. 48 in x 48 in"
+      "media": "Video projection. 12 x 20 feet"
     },
     {
       "id": "33",

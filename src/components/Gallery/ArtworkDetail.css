@@ -20,7 +20,7 @@
     width: 100%;
   }
   
-  .artwork-image {
+  .artwork-image, .artwork-video {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -28,6 +28,13 @@
     opacity: 1;
     transition: opacity 0.3s ease-in-out;
     z-index: 1;
+  }
+
+  /* Video specific styling */
+  .artwork-video {
+    max-height: 85vh; /* Limit height to 85% of viewport height */
+    background-color: #000; /* Dark background for video */
+    display: block;
   }
   
   .fading-in {
@@ -93,6 +100,21 @@
   }
   .artwork-detail.fade-in {
     opacity: 1;
+  }
+
+  /* Video controls - minimal styling */
+  .artwork-video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .artwork-video:hover::-webkit-media-controls {
+    opacity: 0.7;
+  }
+
+  /* Only show basic controls - play/pause and progress */
+  .artwork-video::-webkit-media-controls-panel {
+    background-color: rgba(0, 0, 0, 0.2);
   }
 
   /* The link becomes the outer wrapper */

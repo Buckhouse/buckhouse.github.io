@@ -15,6 +15,7 @@ const ArtworkDetail: React.FC = () => {
 
   const [previousArtwork, setPreviousArtwork] = useState<typeof currentArtwork | null>(null);
   const [transitioning, setTransitioning] = useState(false);
+  // State for future video controls if needed
 
   useEffect(() => {
     if (!currentArtwork) return;
@@ -76,18 +77,40 @@ const ArtworkDetail: React.FC = () => {
       <div className="artwork-image-wrapper">
         <div className="artwork-image-inner" onClick={handleNext} style={{ cursor: 'pointer' }}>
           {previousArtwork && previousArtwork.id !== currentArtwork.id && (
+            <>
+              {previousArtwork.videoURL ? (
+                <video
+                  src={previousArtwork.videoURL}
+                  className="artwork-image fading-out"
+                  style={{ position: 'absolute' }}
+                />
+              ) : (
+                <img
+                  src={previousArtwork.imageURL}
+                  alt={previousArtwork.title}
+                  className="artwork-image fading-out"
+                  style={{ position: 'absolute' }}
+                />
+              )}
+            </>
+          )}
+
+          {currentArtwork.videoURL ? (
+            <video
+              src={currentArtwork.videoURL}
+              className={`artwork-video ${transitioning ? 'fading-in' : ''}`}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+          ) : (
             <img
-              src={previousArtwork.imageURL}
-              alt={previousArtwork.title}
-              className="artwork-image fading-out"
-              style={{ position: 'absolute' }}
+              src={currentArtwork.imageURL}
+              alt={currentArtwork.title}
+              className={`artwork-image ${transitioning ? 'fading-in' : ''}`}
             />
           )}
-          <img
-            src={currentArtwork.imageURL}
-            alt={currentArtwork.title}
-            className={`artwork-image ${transitioning ? 'fading-in' : ''}`}
-          />
         </div>
       </div>
 

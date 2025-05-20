@@ -1,44 +1,94 @@
 /* src/components/Gallery/ArtworkCard.css */
 
-/* src/components/Gallery/ArtworkCard.css */
-
 .artwork-card {
-    position: relative;
-    width: 100%;
-    padding-bottom: 100%; /* makes the container a perfect square */
-    overflow: hidden;
-  }
-  
-  /* Make the <img> fill that square and crop from the center */
-  .artwork-card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;      /* this makes it fill the container, cropping as needed */
-    object-position: 50% 50%; /* centers the crop */
-  }
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* makes the container a perfect square */
+  overflow: hidden;
+}
 
-  .artwork-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  }
-    /* Title sits below the square, so it doesn't affect its height */
+.artwork-card-sizer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%; /* Square aspect ratio */
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #000;
+}
 
-  .artwork-card-title {
-    margin-top: 0.5rem;
-    text-align: center;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--text-color);
-    font-family: var(--menu-font-family);
-    font-family: var(--body-font-family);
-    background-color: var(--bg-white);
-  }
+/* Make the <img> and <video> fill that square and crop from the center */
+.artwork-card-sizer img,
+.artwork-card-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* this makes it fill the container, cropping as needed */
+  object-position: 50% 50%; /* centers the crop */
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+/* Video indicator dot in the corner */
+.video-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Add pulsing animation to video indicator */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.video-indicator {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.artwork-card-video {
+  background-color: #000;
+  transform: scale(1.01); /* Slightly larger to avoid any edge artifacts */
+}
+
+.video-thumbnail {
+  object-fit: cover;
+}
+
+/* Add styling for active video */
+.is-playing {
+  object-fit: cover;
+}
+
+.artwork-card-sizer:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Title sits below the square, so it doesn't affect its height */
+.artwork-card-title {
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  background-color: var(--bg-white);
+}
 
 .artwork-card-link {
-    text-decoration: none;
-    color: inherit;
-  }
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
