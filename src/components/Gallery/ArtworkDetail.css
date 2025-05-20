@@ -18,6 +18,9 @@
   .artwork-image-inner {
     position: relative;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .artwork-image, .artwork-video {
@@ -32,21 +35,20 @@
   /* Base image styling */
   .artwork-image {
     z-index: 1;
+    transition: opacity 0.3s ease-in-out;
   }
   
   /* When image is used as a placeholder for a video */
-  .artwork-image.with-video {
+  .artwork-image.video-placeholder {
     z-index: 1;
   }
 
   /* Video specific styling */
   .artwork-video {
     max-height: 85vh; /* Limit height to 85% of viewport height */
-    background-color: transparent; /* Transparent to allow image to show through */
+    background-color: transparent; /* Transparent background */
     display: block;
-    position: relative;
-    z-index: 2; /* Show above the image */
-    animation: fadeInVideo 0.5s ease-in; /* Fade in the video */
+    transition: opacity 0.3s ease-in-out;
   }
   
   @keyframes fadeInVideo {

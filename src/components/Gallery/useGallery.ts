@@ -9,6 +9,7 @@ export interface Artwork {
   description: string;
   imageURL: string;
   videoURL?: string;  // Optional video URL for video artworks
+  videoThumbURL?: string;  // Optional video thumbnail URL for video artworks
   media: string;
   date: string;
   featured: boolean;

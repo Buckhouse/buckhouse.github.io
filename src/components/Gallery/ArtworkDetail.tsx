@@ -1,6 +1,6 @@
 // src/components/Gallery/ArtworkDetail.tsx
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useGallery from './useGallery';
 import './ArtworkDetail.css';
@@ -15,11 +15,14 @@ const ArtworkDetail: React.FC = () => {
 
   const [previousArtwork, setPreviousArtwork] = useState<typeof currentArtwork | null>(null);
   const [transitioning, setTransitioning] = useState(false);
-  // State for future video controls if needed
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     if (!currentArtwork) return;
 
+    // Reset video loaded state when artwork changes
+    setVideoLoaded(false);
     setPreviousArtwork(currentArtwork);
     setTransitioning(true);
 
@@ -81,36 +84,51 @@ const ArtworkDetail: React.FC = () => {
               {previousArtwork.videoURL ? (
                 <video
                   src={previousArtwork.videoURL}
-                  className="artwork-image fading-out"
-                  style={{ position: 'absolute' }}
+                  className="artwork-previous fading-out"
+                  style={{ position: 'absolute', zIndex: 0 }}
                 />
               ) : (
                 <img
-                  src={previousArtwork.imageURL}
+                  src={previousArtwork.videoThumbURL || previousArtwork.imageURL}
                   alt={previousArtwork.title}
-                  className="artwork-image fading-out"
-                  style={{ position: 'absolute' }}
+                  className="artwork-previous fading-out"
+                  style={{ position: 'absolute', zIndex: 0 }}
                 />
               )}
             </>
           )}
 
-          {/* Always show the image as a base layer */}
+          {/* Use video thumbnail for videos in detail view, regular image for non-videos */}
           <img
-            src={currentArtwork.imageURL}
+            src={currentArtwork.videoThumbURL || currentArtwork.imageURL}
             alt={currentArtwork.title}
-            className={`artwork-image ${transitioning ? 'fading-in' : ''} ${currentArtwork.videoURL ? 'with-video' : ''}`}
+            className={`artwork-image ${transitioning ? 'fading-in' : ''} ${currentArtwork.videoURL ? 'video-placeholder' : ''}`}
+            style={{ 
+              opacity: (currentArtwork.videoURL && videoLoaded) ? 0 : 1 
+            }}
           />
           
-          {/* Show video on top if it exists */}
           {currentArtwork.videoURL && (
             <video
+              ref={videoRef}
               src={currentArtwork.videoURL}
               className={`artwork-video ${transitioning ? 'fading-in' : ''}`}
               autoPlay
               loop
               muted
               playsInline
+              style={{ 
+                opacity: videoLoaded ? 1 : 0,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                zIndex: 5
+              }}
+              onLoadedData={() => {
+                // Set video as loaded after a short delay
+                setTimeout(() => setVideoLoaded(true), 50);
+              }}
             />
           )}
         </div>

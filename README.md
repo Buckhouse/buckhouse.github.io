@@ -28,7 +28,8 @@ The site is built with modern React (v19), TypeScript, and CSS, with a responsiv
 ## Features
 
 - **Responsive Gallery**: Grid-based layout of artwork thumbnails with detailed view
-- **Interactive Video Content**: Hover-to-play video thumbnails with muted audio
+- **Interactive Video Content**: Hover-to-play video thumbnails with optimized loading
+- **Seamless Media Transitions**: Smooth transitions between image and video content
 - **Dynamic Routing**: HashRouter-based navigation with clean URLs
 - **Resource Library**: Filterable collection of courses and resources by category
 - **Film Portfolio**: Visual showcase of film projects
@@ -91,12 +92,14 @@ interface Artwork {
    - Uses the aspect-ratio padding trick for consistent thumbnail dimensions
    - Images use `object-fit: cover` for proper cropping
    - Video thumbnails play automatically on hover (muted)
+   - Optimized video loading with image placeholder to prevent black flash
    - Animated video indicator for artworks with video
    - Hover effects add subtle scaling and shadow
 
 3. **ArtworkDetail.tsx**: Shows full-size image or video with metadata
-   - Supports both image and video artwork display
+   - Conditional rendering: displays video for video artworks, images for others
    - Autoplays videos with muted audio
+   - Smooth transitions between different types of artworks
    - Navigation controls for previous/next/gallery
    - Transition effects between artworks
    - Keyboard navigation support (arrow keys)
@@ -161,6 +164,19 @@ Thumbnail sizing is handled with a padding-based aspect ratio technique to ensur
   border-radius: 50%;
   z-index: 2;
   animation: pulse 2s infinite ease-in-out;
+}
+
+/* Video loading optimization to prevent black flash */
+.artwork-card-video {
+  background-color: transparent;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+.image-placeholder {
+  opacity: 1;
+  z-index: 0;
 }
 ```
 
