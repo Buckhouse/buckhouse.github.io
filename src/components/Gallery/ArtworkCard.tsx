@@ -10,12 +10,16 @@ interface ArtworkCardProps {
 
 const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, className: _className }) => {
   const [isHovering, setIsHovering] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const preloadVideoRef = useRef<HTMLVideoElement>(null);
 
   // Preload video and capture first frame for thumbnail
   useEffect(() => {
     if (artwork.videoURL) {
+      // Reset video ready state when artwork changes
+      setVideoReady(false);
+      
       const preloadVideo = document.createElement('video');
 
       // Setup event listeners
@@ -25,6 +29,7 @@ const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, className: _classNam
 
       preloadVideo.addEventListener('seeked', () => {
         // Video is ready at first frame
+        setVideoReady(true);
       });
 
       // Load the video
@@ -73,8 +78,15 @@ const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, className: _classNam
     >
       {/* Square container for the image/video */}
       <div className="artwork-card-sizer">
-        {artwork.videoURL ? (
-          // Always render the video element, but control playback with effects
+        {/* Always show the image as a base/fallback */}
+        <img 
+          src={artwork.imageURL} 
+          alt={artwork.title} 
+          className={artwork.videoURL && videoReady ? "image-placeholder" : ""}
+        />
+        
+        {/* Only show video if it's a video artwork and the video has loaded */}
+        {artwork.videoURL && videoReady && (
           <video
             ref={videoRef}
             src={artwork.videoURL}
@@ -89,10 +101,9 @@ const ArtworkCard: React.FC<ArtworkCardProps> = ({ artwork, className: _classNam
               e.currentTarget.pause();
             }}
           />
-        ) : (
-          // Regular image for artworks without video
-          <img src={artwork.imageURL} alt={artwork.title} />
         )}
+        
+        {/* Video indicator dot */}
         {artwork.videoURL && (
           <div className="video-indicator"></div>
         )}

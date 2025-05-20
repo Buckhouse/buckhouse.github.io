@@ -95,7 +95,15 @@ const ArtworkDetail: React.FC = () => {
             </>
           )}
 
-          {currentArtwork.videoURL ? (
+          {/* Always show the image as a base layer */}
+          <img
+            src={currentArtwork.imageURL}
+            alt={currentArtwork.title}
+            className={`artwork-image ${transitioning ? 'fading-in' : ''} ${currentArtwork.videoURL ? 'with-video' : ''}`}
+          />
+          
+          {/* Show video on top if it exists */}
+          {currentArtwork.videoURL && (
             <video
               src={currentArtwork.videoURL}
               className={`artwork-video ${transitioning ? 'fading-in' : ''}`}
@@ -103,12 +111,6 @@ const ArtworkDetail: React.FC = () => {
               loop
               muted
               playsInline
-            />
-          ) : (
-            <img
-              src={currentArtwork.imageURL}
-              alt={currentArtwork.title}
-              className={`artwork-image ${transitioning ? 'fading-in' : ''}`}
             />
           )}
         </div>
